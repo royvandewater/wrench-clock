@@ -17,6 +17,7 @@ group :development do
 end
 
 group :development, :test, :guard do
+  gem 'blinky-tape-test-status-guard', :require => false
   gem 'database_cleaner', :git => 'https://github.com/bmabey/database_cleaner.git', :require => false
   gem 'growl'
   gem 'guard', :require => false
