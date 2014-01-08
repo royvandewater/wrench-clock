@@ -16,18 +16,21 @@ group :development do
   gem 'rest_controller_generators'
 end
 
-# Guard
 group :development, :test, :guard do
+  gem 'database_cleaner', :git => 'https://github.com/bmabey/database_cleaner.git', :require => false
+  gem 'growl'
   gem 'guard', :require => false
   gem 'guard-bundler', :require => false
   gem 'guard-jasmine', :require => false
-  gem 'guard-rspec', :require => false
   gem 'guard-passenger', :require => false
+  gem 'guard-rspec', :require => false
   gem 'guard-shell', :require => false
-  gem 'growl'
+  gem 'guard-spork', :require => false
   gem 'jasminerice', :git => 'https://github.com/bradphelan/jasminerice.git'
   gem 'jasminerice-runner'
   gem 'listen', :require => false
   gem 'passenger', :require => false
   gem 'poltergeist'
+  gem 'rspec-rails'
+  gem 'spork-rails', :github => 'sporkrb/spork-rails'
 end
