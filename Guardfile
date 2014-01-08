@@ -73,8 +73,8 @@ guard 'rspec', :cmd => 'rspec --drb --drb-port 8888', :env => {'RAILS_ENV' => 'g
 
   callback(:run_all_begin) { @blinky_tape.pulse! }
   callback(:run_all_end) { @blinky_tape.set_status! }
-  callback(:run_on_changes_begin) { @blinky_tape.flash! }
-  callback(:run_on_changes_end) { @blinky_tape.set_status! }
+  callback(:run_on_modifications_begin) { @blinky_tape.flash! }
+  callback(:run_on_modifications_end) { @blinky_tape.set_status! }
 end
 
 guard :jasmine, :all_on_start => false do
@@ -86,7 +86,7 @@ guard :jasmine, :all_on_start => false do
 
   callback(:run_all_begin) { @blinky_tape.pulse! }
   callback(:run_all_end) { @blinky_tape.set_status! }
-  callback(:run_on_changes_begin) { @blinky_tape.flash! }
-  callback(:run_on_changes_end) { @blinky_tape.set_status! }
+  callback(:run_on_modifications_begin) { @blinky_tape.flash! }
+  callback(:run_on_modifications_end) { @blinky_tape.set_status! }
   callback(:stop_begin) { @blinky_tape.shutdown! }
 end
