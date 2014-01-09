@@ -1,6 +1,7 @@
 class window.VehicleRowView extends Backbone.View
   template: JST['templates/vehicle_row']
-  tagName: 'li'
+  tagName: 'a'
+  className: 'list-group-item'
 
   initialize: =>
     @listenTo @model, 'remove', @remove
@@ -11,4 +12,5 @@ class window.VehicleRowView extends Backbone.View
 
   render: =>
     @$el.html @template @context()
+    @$el.attr href: '#'
     this

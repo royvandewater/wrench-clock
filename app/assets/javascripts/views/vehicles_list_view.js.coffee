@@ -22,7 +22,7 @@ class window.VehiclesListView extends Backbone.View
   # Instance Methods
   add_one: (model) =>
     view = new VehicleRowView model: model
-    @$('ul').append view.render().$el
+    @$('div').append view.render().$el
     @views.push view
 
   remove_views: =>
