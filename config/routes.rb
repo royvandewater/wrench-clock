@@ -3,7 +3,10 @@ WrenchClock::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :vehicles
+      resources :service_records
+      resources :vehicles do
+        resources :service_records
+      end
     end
   end
 end

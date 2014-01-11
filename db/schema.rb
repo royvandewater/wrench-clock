@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140109163854) do
+ActiveRecord::Schema.define(version: 20140111191130) do
+
+  create_table "service_records", force: true do |t|
+    t.integer  "vehicle_id"
+    t.string   "name"
+    t.integer  "mileage"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "service_records", ["vehicle_id"], name: "index_service_records_on_vehicle_id", using: :btree
 
   create_table "vehicles", force: true do |t|
     t.string   "name"
