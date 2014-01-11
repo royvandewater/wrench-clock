@@ -3,11 +3,11 @@ class Api::V1::ServiceRecordsController < Api::V1::ApiController
   before_filter :find_service_record, :except => [:index, :create]
 
   def index
-    respond_with ServiceRecord.all
+    respond_with @vehicle.service_records.all
   end
 
   def create
-    respond_with ServiceRecord.create service_record_params
+    respond_with @vehicle.service_records.create service_record_params
   end
 
   def show

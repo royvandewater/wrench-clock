@@ -1,0 +1,2 @@
+<%= @model.name %>
+<span class="text-muted"><%= @model.mileage %> mi</span>

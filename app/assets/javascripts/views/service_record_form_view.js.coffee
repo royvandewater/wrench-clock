@@ -2,7 +2,7 @@ class window.ServiceRecordFormView extends Backbone.View
   template: JST['templates/service_record_form']
 
   initialize: =>
-    @listenTo @model, 'sync', => Backbone.history.navigate Path.vehicle(@model.vehicle_id), trigger: true
+    @listenTo @model, 'sync', => Backbone.history.navigate Path.vehicle(@model.get 'vehicle_id'), trigger: true
     @listenTo @model, 'error invalid', @render
 
   context: =>
