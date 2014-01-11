@@ -7,6 +7,7 @@ class window.ServiceRecordsListView extends Backbone.View
     @listenTo @collection, 'sync error request reset', @render
 
   context: =>
+    parent: @model.toJSON()
     loading: @collection.loading
 
   render: =>
@@ -22,7 +23,7 @@ class window.ServiceRecordsListView extends Backbone.View
   # Instance Methods
   add_one: (model) =>
     view = new ServiceRecordRowView model: model
-    @$('ul').append view.render().$el
+    @$('.new-service-record').before view.render().$el
     @views.push view
 
   remove_views: =>

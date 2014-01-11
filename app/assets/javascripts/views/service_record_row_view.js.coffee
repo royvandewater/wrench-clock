@@ -1,6 +1,7 @@
 class window.ServiceRecordRowView extends Backbone.View
   template: JST['templates/service_record_row']
-  tagName: 'li'
+  tagName: 'a'
+  className: 'list-group-item'
 
   initialize: =>
     @listenTo @model, 'remove', @remove

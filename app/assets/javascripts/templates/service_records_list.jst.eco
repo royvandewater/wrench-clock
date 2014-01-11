@@ -1,2 +1,5 @@
-<ul>
-</ul>
+<div class="list-group">
+  <a href="<%= Path.new_service_record @parent.id %>" class="list-group-item new-service-record">
+    New Service Record
+  </a>
+</div>
