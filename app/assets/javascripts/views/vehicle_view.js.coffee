@@ -8,4 +8,6 @@ class window.VehicleView extends Backbone.View
 
   render: =>
     @$el.html @template @context()
+    view = new ServiceRecordsListView collection: @model.service_records
+    @$el.append view.render().$el
     this

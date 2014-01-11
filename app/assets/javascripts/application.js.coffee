@@ -13,13 +13,16 @@
 #= require jquery
 #= require bootstrap
 #= require underscore
+#= require underscore.string
 #= require backbone
+#= require_tree ./support
 #= require_tree ./models
 #= require_tree ./collections
 #= require_tree ./templates
 #= require_tree ./views
 #= require_tree ./routers
-#= require_tree ./support
+
+_.mixin _.str.exports()
 
 $ ->
   Backbone.history.start()
