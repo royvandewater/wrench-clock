@@ -1,3 +1,8 @@
 <h1>Vehicles</h1>
 
-<div class="list-group"></div>
+<div class="list-group">
+
+  <a href="<%= Path.new_vehicle() %>" class="list-group-item new-vehicle">
+    New Vehicle
+  </a>
+</div>
