@@ -18,7 +18,4 @@ class VehiclesRouter extends Backbone.Router
     collection.fetch()
     @render new VehiclesListView collection: collection
 
-  render: (view) =>
-    $('#main-content').html view.render().$el
-
 new VehiclesRouter
