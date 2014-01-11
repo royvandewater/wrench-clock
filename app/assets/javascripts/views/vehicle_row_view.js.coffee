@@ -12,5 +12,5 @@ class window.VehicleRowView extends Backbone.View
 
   render: =>
     @$el.html @template @context()
-    @$el.attr href: '#'
+    @$el.attr href: Path.vehicle(@model.id)
     this
