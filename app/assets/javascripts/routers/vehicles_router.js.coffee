@@ -1,19 +1,24 @@
 class VehiclesRouter extends Backbone.Router
   routes:
     ''             : 'vehicles_list'
+    'vehicles/new' : 'new_vehicle'
     'vehicles/:id' : 'vehicle'
+
+  new_vehicle: =>
+    model = new Vehicle
+    @render new VehicleFormView model: model
 
   vehicle: (vehicle_id) =>
     model = new Vehicle id: vehicle_id
     model.fetch()
-    view = new VehicleView model: model
-    $('#main-content').html view.render().$el
+    @render new VehicleView model: model
 
   vehicles_list: =>
     collection = new Vehicles
     collection.fetch()
-    view = new VehiclesListView collection: collection
-    $('#main-content').html view.render().$el
+    @render new VehiclesListView collection: collection
 
+  render: (view) =>
+    $('#main-content').html view.render().$el
 
 new VehiclesRouter
