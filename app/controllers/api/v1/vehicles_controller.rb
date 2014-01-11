@@ -2,7 +2,7 @@ class Api::V1::VehiclesController < Api::V1::ApiController
   before_filter :find_vehicle, :except => [:index, :create]
 
   def index
-    respond_with Vehicle.all, :each_serializer => VehicleSerializer
+    respond_with Vehicle.all
   end
 
   def create
@@ -10,7 +10,7 @@ class Api::V1::VehiclesController < Api::V1::ApiController
   end
 
   def show
-    respond_with @vehicle
+    respond_with @vehicle, :serializer => VehicleWithServiceRecordsSerializer
   end
 
   def update
